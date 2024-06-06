@@ -1,1 +1,1 @@
-# 2.-AWS-Backup-Automation-Script-
+AWS-Backup-Automation-Script-
