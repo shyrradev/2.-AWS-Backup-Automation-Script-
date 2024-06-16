@@ -4,13 +4,11 @@ create_ec2_snapshot() {
     if [ -z $1 ]; then
              echo "Error: No VOLUME ID provided."
         echo "Usage: FETCH VOLUME ID <volume-id>"
-        exit 1
          fi
     aws ec2 create-snapshot --volume-id "$1" --description "Snapshot for volume $1"
     
     if [ $? -ne 0 ]; then
-        echo "Failed to create EC2 snapshot for DB instance $1."
-        exit 1
+        echo "Failed to create EC2 snapshot for DB instance $1." 
     else 
         echo "EC2 snapshot created successfully for VOLUME ID $1. Snapshot ID: $snapshot_identifier"
     fi
